@@ -20,15 +20,16 @@ function handlePlayButton() {
 
 function playNextRound() {
   nextSequenceIndex = 0;
-  const highlightedCircle = Math.floor(Math.random() * 4);
-  sequence.push(highlightedCircle);
+  const nextHighlightedCircle = Math.floor(Math.random() * 4);
+  sequence.push(nextHighlightedCircle);
   highlightSequence();
 }
 
 function handleSelectedCircle(event) {
   let selectedCircle = event.currentTarget;
+  const expectedNextSequence = sequence[nextSequenceIndex];
   const hasSelectedTheRightCircle =
-    selectedCircle === circles[sequence[nextSequenceIndex]];
+    selectedCircle === circles[expectedNextSequence];
   if (hasSelectedTheRightCircle) {
     nextSequenceIndex++;
 
