@@ -11,31 +11,31 @@
   padding: 10px;
 }
 
-.container__balls {
+.container__circles {
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;
 }
 
-.ball {
+.circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   opacity: 0.3;
 }
 
-.red__ball {
+.red__circle {
   background-color: red;
 }
 
-.yellow__ball {
+.yellow__circle {
   background-color: orange;
 }
-.green__ball {
+.green__circle {
   background-color: green;
 }
 
-.blue__ball {
+.blue__circle {
   background-color: blueviolet;
 }
 
@@ -52,4 +52,8 @@
   background-color: rgb(75, 204, 114);
   color: white;
   font-size: 18px;
+}
+
+.js-highlighted-circle {
+  opacity: 1;
 }
