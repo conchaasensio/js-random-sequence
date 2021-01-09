@@ -2,9 +2,9 @@
 
 const playButton = document.querySelector('.js-button');
 
-function highlightCircle() {
-  let highlightedCircle = document.querySelector('.js-circle');
+function highlightCircle(position) {
+  let highlightedCircle = document.querySelectorAll('.js-circle')[position];
   highlightedCircle.classList.add('js-highlighted-circle');
 }
 
-playButton.addEventListener('click', highlightCircle);
+playButton.addEventListener('click', () => highlightCircle(0));
