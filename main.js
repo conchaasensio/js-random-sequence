@@ -31,8 +31,14 @@ function handleSelectedCircle(event) {
     selectedCircle === circles[sequence[nextSequenceIndex]];
   if (hasSelectedTheRightCircle) {
     nextSequenceIndex++;
+
     if (nextSequenceIndex === sequence.length) {
-      playNextRound();
+      if (nextSequenceIndex === 5) {
+        alert('Has ganado');
+        sequence = [];
+      } else {
+        playNextRound();
+      }
     }
   } else {
     alert('Te has equivocado');
