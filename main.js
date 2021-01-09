@@ -3,8 +3,9 @@
 const playButton = document.querySelector('.js-button');
 
 function highlightCircle(position) {
-  let highlightedCircle = document.querySelectorAll('.js-circle')[position];
-  highlightedCircle.classList.add('js-highlighted-circle');
+  let circles = document.querySelectorAll('.js-circle');
+  circles.forEach((circle) => circle.classList.remove('js-highlighted-circle'));
+  circles[position].classList.add('js-highlighted-circle');
 }
 
 function handleHighlightCircle() {
