@@ -28,16 +28,32 @@
 .red__circle {
   background-color: red;
 }
+.red__circle:hover {
+  opacity: 0.5;
+}
 
 .yellow__circle {
   background-color: orange;
 }
+
+.yellow__circle:hover {
+  opacity: 0.5;
+}
+
 .green__circle {
   background-color: green;
 }
 
+.green__circle:hover {
+  opacity: 0.5;
+}
+
 .blue__circle {
   background-color: blueviolet;
+}
+
+.blue__circle:hover {
+  opacity: 0.5;
 }
 
 .container__button {
@@ -46,13 +62,22 @@
 }
 
 .button {
-  border-radius: 40%;
+  border-radius: 40px;
+  outline: none;
   border: none;
   height: 60px;
-  width: 100px;
+  width: 110px;
   background-color: rgb(75, 204, 114);
   color: white;
   font-size: 18px;
+}
+
+.button:hover {
+  background-color: rgb(29, 207, 29);
+}
+
+.button:active {
+  transform: translateY(4px);
 }
 
 .js-highlighted-circle {
