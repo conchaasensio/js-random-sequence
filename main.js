@@ -4,6 +4,7 @@ const playButton = document.querySelector('.js-button');
 let circles = document.querySelectorAll('.js-circle');
 let sequence = [];
 let nextSequenceIndex = 0;
+const maxNumberOfRounds = 5;
 
 function highlightCircle(position) {
   circles[position].classList.add('js-highlighted-circle');
@@ -20,7 +21,7 @@ function handlePlayButton() {
 
 function playNextRound() {
   nextSequenceIndex = 0;
-  const nextHighlightedCircle = Math.floor(Math.random() * 4);
+  const nextHighlightedCircle = Math.floor(Math.random() * circles.length);
   sequence.push(nextHighlightedCircle);
   highlightSequence();
 }
@@ -37,7 +38,7 @@ function handleSelectedCircle(event) {
     nextSequenceIndex++;
 
     if (nextSequenceIndex === sequence.length) {
-      if (nextSequenceIndex === 5) {
+      if (nextSequenceIndex === maxNumberOfRounds) {
         alert('Has ganado');
         sequence = [];
       } else {
