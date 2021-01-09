@@ -26,6 +26,9 @@ function playNextRound() {
 }
 
 function handleSelectedCircle(event) {
+  if (isNotStartedGame()) {
+    return;
+  }
   let selectedCircle = event.currentTarget;
   const expectedNextSequence = sequence[nextSequenceIndex];
   const hasSelectedTheRightCircle =
@@ -51,6 +54,10 @@ playButton.addEventListener('click', handlePlayButton);
 circles.forEach((circle) =>
   circle.addEventListener('click', handleSelectedCircle)
 );
+
+function isNotStartedGame() {
+  return sequence.length === 0;
+}
 
 function highlightSequence() {
   for (let i = 0; i < sequence.length; i++) {
