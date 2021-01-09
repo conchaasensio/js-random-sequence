@@ -7,4 +7,8 @@ function highlightCircle(position) {
   highlightedCircle.classList.add('js-highlighted-circle');
 }
 
-playButton.addEventListener('click', () => highlightCircle(0));
+function handleHighlightCircle() {
+  highlightCircle(Math.floor(Math.random() * 4));
+}
+
+playButton.addEventListener('click', handleHighlightCircle);
