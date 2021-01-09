@@ -1,0 +1,41 @@
+.body {
+  box-sizing: border-box;
+}
+
+.header {
+  display: block;
+  width: 500px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.container__balls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  border: solid 1px red;
+  border-radius: 50%;
+}
+
+.container__button {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 50%;
+}
