@@ -12,8 +12,8 @@ function clearHighlightedCircles() {
 }
 
 function handleHighlightCircle() {
-  clearHighlightedCircles();
   highlightCircle(Math.floor(Math.random() * 4));
+  setTimeout(clearHighlightedCircles, 1000);
 }
 
 playButton.addEventListener('click', handleHighlightCircle);
