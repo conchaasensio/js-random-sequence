@@ -1,0 +1,24 @@
+{
+  "name": "js-random-sequence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conchaasensiomr/js-random-sequence.git"
+  },
+  "author": "Concha Asensio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conchaasensiomr/js-random-sequence/issues"
+  },
+  "homepage": "https://github.com/conchaasensiomr/js-random-sequence#readme"
+}
