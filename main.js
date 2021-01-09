@@ -3,6 +3,7 @@
 const playButton = document.querySelector('.js-button');
 let circles = document.querySelectorAll('.js-circle');
 let sequence = [];
+let nextSequenceIndex = 0;
 
 function highlightCircle(position) {
   circles[position].classList.add('js-highlighted-circle');
@@ -13,6 +14,7 @@ function clearHighlightedCircles() {
 }
 
 function playRound() {
+  nextSequenceIndex = 0;
   const highlightedCircle = Math.floor(Math.random() * 4);
   sequence.push(highlightedCircle);
   highlightSequence();
@@ -20,10 +22,16 @@ function playRound() {
 
 function handleSelectedCircle(event) {
   let selectedCircle = event.currentTarget;
-  if (selectedCircle === circles[sequence[0]]) {
-    playRound();
+  const hasSelectedTheRightCircle =
+    selectedCircle === circles[sequence[nextSequenceIndex]];
+  if (hasSelectedTheRightCircle) {
+    nextSequenceIndex++;
+    if (nextSequenceIndex === sequence.length) {
+      playRound();
+    }
   } else {
     alert('Te has equivocado');
+    sequence = [];
   }
 }
 
