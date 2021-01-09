@@ -12,23 +12,30 @@ function clearHighlightedCircles() {
   circles.forEach((circle) => circle.classList.remove('js-highlighted-circle'));
 }
 
-function handlePlayButton() {
+function playRound() {
   const highlightedCircle = Math.floor(Math.random() * 4);
-  highlightCircle(highlightedCircle);
   sequence.push(highlightedCircle);
-  setTimeout(clearHighlightedCircles, 1000);
+  highlightSequence();
 }
 
 function handleSelectedCircle(event) {
   let selectedCircle = event.currentTarget;
   if (selectedCircle === circles[sequence[0]]) {
-    alert('Has acertado');
+    playRound();
   } else {
     alert('Te has equivocado');
   }
 }
 
-playButton.addEventListener('click', handlePlayButton);
+playButton.addEventListener('click', playRound);
 circles.forEach((circle) =>
   circle.addEventListener('click', handleSelectedCircle)
 );
+
+function highlightSequence() {
+  for (let i = 0; i < sequence.length; i++) {
+    const position = sequence[i];
+    setTimeout(() => highlightCircle(position), (i + 1) * 1000);
+    setTimeout(clearHighlightedCircles, (i + 1) * 1000 + 800);
+  }
+}
