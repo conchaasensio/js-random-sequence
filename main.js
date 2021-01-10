@@ -3,24 +3,31 @@
 let sequence = [];
 let nextSequenceIndex = 0;
 
+function handlePlayButton() {
+  sequence = [];
+  playNextRound();
+}
+function playNextRound() {
+  nextSequenceIndex = 0;
+  const nextHighlightedCircle = Math.floor(Math.random() * circles.length);
+  sequence.push(nextHighlightedCircle);
+  highlightSequence();
+}
+
+function highlightSequence() {
+  for (let i = 0; i < sequence.length; i++) {
+    const position = sequence[i];
+    setTimeout(() => highlightCircle(position), (i + 1) * 1000);
+    setTimeout(clearHighlightedCircles, (i + 1) * 1000 + 800);
+  }
+}
+
 function highlightCircle(position) {
   circles[position].classList.add('js-highlighted-circle');
 }
 
 function clearHighlightedCircles() {
   circles.forEach((circle) => circle.classList.remove('js-highlighted-circle'));
-}
-
-function handlePlayButton() {
-  sequence = [];
-  playNextRound();
-}
-
-function playNextRound() {
-  nextSequenceIndex = 0;
-  const nextHighlightedCircle = Math.floor(Math.random() * circles.length);
-  sequence.push(nextHighlightedCircle);
-  highlightSequence();
 }
 
 function handleSelectedCircle(event) {
@@ -38,7 +45,7 @@ function handleSelectedCircle(event) {
       playNextRound();
     }
   } else {
-    alert('Te has equivocado');
+    alert('Te has equivocado :(');
     sequence = [];
   }
 }
@@ -47,14 +54,7 @@ function isNotStartedGame() {
   return sequence.length === 0;
 }
 
-function highlightSequence() {
-  for (let i = 0; i < sequence.length; i++) {
-    const position = sequence[i];
-    setTimeout(() => highlightCircle(position), (i + 1) * 1000);
-    setTimeout(clearHighlightedCircles, (i + 1) * 1000 + 800);
-  }
-}
-
+//DOM
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
