@@ -69,20 +69,25 @@ playButton.addEventListener('click', handlePlayButton);
 buttonContainer.appendChild(playButton);
 
 const circlesContainer = document.querySelector('.container__circles');
+
 let circle = document.createElement('div');
 circle.classList.add('circle', 'red__circle', 'js-circle');
+circle.addEventListener('click', handleSelectedCircle);
 circlesContainer.appendChild(circle);
+
 circle = document.createElement('div');
 circle.classList.add('circle', 'yellow__circle', 'js-circle');
+circle.addEventListener('click', handleSelectedCircle);
 circlesContainer.appendChild(circle);
+
 circle = document.createElement('div');
 circle.classList.add('circle', 'green__circle', 'js-circle');
+circle.addEventListener('click', handleSelectedCircle);
 circlesContainer.appendChild(circle);
+
 circle = document.createElement('div');
 circle.classList.add('circle', 'blue__circle', 'js-circle');
+circle.addEventListener('click', handleSelectedCircle);
 circlesContainer.appendChild(circle);
-let circles = document.querySelectorAll('.js-circle');
 
-circles.forEach((circle) =>
-  circle.addEventListener('click', handleSelectedCircle)
-);
+let circles = document.querySelectorAll('.js-circle');
