@@ -65,9 +65,11 @@ const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-const containerCircles = document.createElement('div');
-containerCircles.classList.add('container__circles');
-container.appendChild(containerCircles);
+const circlesContainer = document.createElement('div');
+circlesContainer.classList.add('container__circles');
+circlesContainer.dataset.testid = 'circles-container';
+
+container.appendChild(circlesContainer);
 
 const buttonContainer = document.createElement('div');
 buttonContainer.classList.add('container__button', 'js-container-button');
@@ -78,8 +80,6 @@ playButton.classList.add('button', 'js-button');
 playButton.appendChild(document.createTextNode('Play'));
 playButton.addEventListener('click', handlePlayButton);
 buttonContainer.appendChild(playButton);
-
-const circlesContainer = document.querySelector('.container__circles');
 
 function createCircle(color) {
   let circle = document.createElement('div');
