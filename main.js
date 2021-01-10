@@ -1,6 +1,6 @@
 'use strict';
+const playButton = document.createElement('button');
 
-const playButton = document.querySelector('.js-button');
 let circles = document.querySelectorAll('.js-circle');
 let sequence = [];
 let nextSequenceIndex = 0;
@@ -67,3 +67,8 @@ function highlightSequence() {
     setTimeout(clearHighlightedCircles, (i + 1) * 1000 + 800);
   }
 }
+
+const buttonContainer = document.querySelector('.js-container-button');
+playButton.classList.add('button', 'js-button');
+playButton.appendChild(document.createTextNode('Play'));
+buttonContainer.appendChild(playButton);
