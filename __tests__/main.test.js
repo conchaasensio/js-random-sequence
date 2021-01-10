@@ -24,7 +24,7 @@ test('should highlight a circle on play button click', async () => {
 
   await userEvent.click(button);
 
-  jest.advanceTimersByTime(1000);
+  jest.advanceTimersByTime(1000); //The game starts after 1 second.
   const circlesContainer = await screen.getByTestId('circles-container');
   expect(circlesContainer.childNodes[0]).toHaveClass('js-highlighted-circle');
 });
@@ -35,7 +35,7 @@ test('should remove the highlight of the circle after 1 second', async () => {
 
   await userEvent.click(button);
 
-  jest.advanceTimersByTime(2000);
+  jest.advanceTimersByTime(1800); //The highlighted class is removed after 800 miliseconds.
   const circlesContainer = await screen.getByTestId('circles-container');
   expect(circlesContainer.childNodes[0]).not.toHaveClass(
     'js-highlighted-circle'
