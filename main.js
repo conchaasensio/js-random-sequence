@@ -1,7 +1,5 @@
 'use strict';
-const playButton = document.createElement('button');
 
-let circles = document.querySelectorAll('.js-circle');
 let sequence = [];
 let nextSequenceIndex = 0;
 const maxNumberOfRounds = 5;
@@ -51,11 +49,6 @@ function handleSelectedCircle(event) {
   }
 }
 
-playButton.addEventListener('click', handlePlayButton);
-circles.forEach((circle) =>
-  circle.addEventListener('click', handleSelectedCircle)
-);
-
 function isNotStartedGame() {
   return sequence.length === 0;
 }
@@ -69,6 +62,27 @@ function highlightSequence() {
 }
 
 const buttonContainer = document.querySelector('.js-container-button');
+const playButton = document.createElement('button');
 playButton.classList.add('button', 'js-button');
 playButton.appendChild(document.createTextNode('Play'));
+playButton.addEventListener('click', handlePlayButton);
 buttonContainer.appendChild(playButton);
+
+const circlesContainer = document.querySelector('.container__circles');
+let circle = document.createElement('div');
+circle.classList.add('circle', 'red__circle', 'js-circle');
+circlesContainer.appendChild(circle);
+circle = document.createElement('div');
+circle.classList.add('circle', 'yellow__circle', 'js-circle');
+circlesContainer.appendChild(circle);
+circle = document.createElement('div');
+circle.classList.add('circle', 'green__circle', 'js-circle');
+circlesContainer.appendChild(circle);
+circle = document.createElement('div');
+circle.classList.add('circle', 'blue__circle', 'js-circle');
+circlesContainer.appendChild(circle);
+let circles = document.querySelectorAll('.js-circle');
+
+circles.forEach((circle) =>
+  circle.addEventListener('click', handleSelectedCircle)
+);
