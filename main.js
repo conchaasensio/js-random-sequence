@@ -61,7 +61,18 @@ function highlightSequence() {
   }
 }
 
-const buttonContainer = document.querySelector('.js-container-button');
+const container = document.createElement('div');
+container.classList.add('container');
+document.body.appendChild(container);
+
+const containerCircles = document.createElement('div');
+containerCircles.classList.add('container__circles');
+container.appendChild(containerCircles);
+
+const buttonContainer = document.createElement('div');
+buttonContainer.classList.add('container__button', 'js-container-button');
+container.appendChild(buttonContainer);
+
 const playButton = document.createElement('button');
 playButton.classList.add('button', 'js-button');
 playButton.appendChild(document.createTextNode('Play'));

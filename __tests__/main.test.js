@@ -1,5 +1,10 @@
-const { test, expect } = require('@jest/globals');
+import '@testing-library/jest-dom';
+import { screen } from '@testing-library/dom';
+import '../main';
 
-test('xxx', () => {
-  expect(true).toBe(true);
+test('should render the play button', async () => {
+  const button = await screen.getByRole('button');
+
+  expect(button).toBeVisible();
+  expect(button).toHaveTextContent('Play');
 });
