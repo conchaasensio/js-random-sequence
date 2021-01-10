@@ -12,7 +12,7 @@
   padding: 10px;
 }
 
-.container__circles {
+.circles-container {
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;
@@ -25,38 +25,38 @@
   opacity: 0.3;
 }
 
-.red__circle {
+.red-circle {
   background-color: red;
 }
-.red__circle:hover {
+.red-circle:hover {
   opacity: 0.5;
 }
 
-.yellow__circle {
+.yellow-circle {
   background-color: orange;
 }
 
-.yellow__circle:hover {
+.yellow-circle:hover {
   opacity: 0.5;
 }
 
-.green__circle {
+.green-circle {
   background-color: green;
 }
 
-.green__circle:hover {
+.green-circle:hover {
   opacity: 0.5;
 }
 
-.blue__circle {
+.blue-circle {
   background-color: blueviolet;
 }
 
-.blue__circle:hover {
+.blue-circle:hover {
   opacity: 0.5;
 }
 
-.container__button {
+.button-container {
   display: flex;
   justify-content: center;
 }
