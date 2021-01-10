@@ -2,7 +2,6 @@
 
 let sequence = [];
 let nextSequenceIndex = 0;
-const maxNumberOfRounds = 5;
 
 function highlightCircle(position) {
   circles[position].classList.add('js-highlighted-circle');
@@ -36,12 +35,7 @@ function handleSelectedCircle(event) {
     nextSequenceIndex++;
 
     if (nextSequenceIndex === sequence.length) {
-      if (nextSequenceIndex === maxNumberOfRounds) {
-        alert('Has ganado');
-        sequence = [];
-      } else {
-        playNextRound();
-      }
+      playNextRound();
     }
   } else {
     alert('Te has equivocado');
