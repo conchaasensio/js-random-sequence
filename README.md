@@ -1,4 +1,4 @@
-# 🔴 🟡 🟢 🔵 Javascript random sequence
+# 🔴 🟡 🟢 🔵 JavaScript random sequence
 
 This app consists of a simple game in which the user has to repeat correctly a sequence of colors by clicking on each highlighted circle.
 
