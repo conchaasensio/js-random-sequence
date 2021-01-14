@@ -45,7 +45,7 @@ function handleSelectedCircle(event) {
       playNextRound();
     }
   } else {
-    alert('Te has equivocado :(');
+    alert('Te has equivocado :( Inténtalo de nuevo ¡dale a Play!');
     sequence = [];
   }
 }
