@@ -29,7 +29,7 @@
 .red-circle {
   background-color: red;
 }
-.red-circle:hover {
+.red-circle:active {
   opacity: 0.5;
 }
 
@@ -37,7 +37,7 @@
   background-color: orange;
 }
 
-.yellow-circle:hover {
+.yellow-circle:active {
   opacity: 0.5;
 }
 
@@ -45,7 +45,7 @@
   background-color: green;
 }
 
-.green-circle:hover {
+.green-circle:active {
   opacity: 0.5;
 }
 
@@ -53,7 +53,7 @@
   background-color: blueviolet;
 }
 
-.blue-circle:hover {
+.blue-circle:active {
   opacity: 0.5;
 }
 
